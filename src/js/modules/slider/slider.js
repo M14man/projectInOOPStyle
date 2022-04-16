@@ -7,7 +7,10 @@ export default class Slider {
         animate = false,
         autoplay = false } = {}) {
         this.container = document.querySelector(container);
-        this.slides = this.container.children;
+        try {
+            this.slides = this.container.children;
+        } catch (e) {
+        }
         this.btns = document.querySelectorAll(btns);
         this.prev = document.querySelector(prev);
         this.next = document.querySelector(next);
@@ -22,90 +25,6 @@ export default class Slider {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const slider = () => {
-//     const page = document.querySelector('.page'),
-//         btns = document.querySelectorAll('.next'),
-//         hanson = document.querySelector('.hanson');
-//     let slides = page.children,
-//         slideIndex = 1;
-    
-//     const wrapper = document.querySelectorAll('.sidecontrol');
-
-    
-//     wrapper.forEach(elem => {
-//         elem.firstElementChild.addEventListener('click', () => {
-//             changeSlide(-1);
-//             if(slideIndex < 1) {
-//                 slideIndex = slides.length;
-//                 showSlide();
-//             }
-//             showSlide();
-//         });
-//     });
-    
-    
-    
-    
-//     hanson.style.display = 'none';
-    
-    
-    
-//     function showSlide() {
-//         slides.forEach(slide => {
-//             slide.style.display = 'none';
-//             slides[slideIndex - 1].style.display = 'block';
-//         });
-//     }
-    
-//     showSlide();
-
-//     function changeSlide(n) {
-//         slideIndex = slideIndex + n;
-//     }
-
-//     btns.forEach(btn => {
-//         btn.addEventListener('click', () => {
-//             hanson.style.display = 'none';
-//             changeSlide(1);
-//             if (slideIndex > slides.length) {
-//                 slideIndex = 1;
-//             }
-//             if (slideIndex === 3) {
-//                 setTimeout(() => {
-//                     hanson.style.display = 'block';
-//                 }, 3000);
-//             }
-//             showSlide();
-            
-
-            
-            
-//             console.log(slideIndex);
-            
-//         }); 
-//     });
 
     
 
